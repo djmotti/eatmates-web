@@ -1,7 +1,7 @@
 
 const cachePrefix = 'eatmates-web-shell-';
-const cacheName = cachePrefix + 'e57d5d4fadd34802';
-const shellUrls = ["assets/index-CFed9xyo.js","assets/index-Jvt3VEZn.css","assets/index.esm-CYjVuxfc.js","assets/index.esm-CxOwZfKi.js","assets/index.esm-hBmI33oz.js","assets/index.esm-x8vGtbx-.js","icons/eatmates-logo.png","index.html","legal/delete-account/index.html","legal/privacy/index.html","manifest.json","manifest.webmanifest"].map(file => new URL(file, self.registration.scope).href);
+const cacheName = cachePrefix + '2c876e776eecff20';
+const shellUrls = ["assets/index-Cr5NlXVG.js","assets/index-tCQJjRYj.css","assets/index.esm-CYjVuxfc.js","assets/index.esm-CxOwZfKi.js","assets/index.esm-hBmI33oz.js","assets/index.esm-x8vGtbx-.js","icons/eatmates-logo.png","index.html","legal/delete-account/index.html","legal/privacy/index.html","manifest.json","manifest.webmanifest"].map(file => new URL(file, self.registration.scope).href);
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(shellUrls)));
 });
