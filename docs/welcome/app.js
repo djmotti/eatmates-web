@@ -50,9 +50,3 @@ film.addEventListener('volumechange', () => {
 });
 accessButton.hidden = false;
 accessButton.addEventListener('click', () => menu.showModal());
-document.querySelector('#statement-link').addEventListener('click', () => {
-  menu.close();
-  const statement = document.querySelector('#accessibility');
-  statement.tabIndex = -1;
-  statement.focus();
-});
