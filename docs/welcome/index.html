@@ -12,27 +12,22 @@
 <style>
 .instagram-button { gap: .55rem; color: #fff; border-color: transparent; background: linear-gradient(110deg, #9b3200, #ae174c 45%, #6728aa); }
 .instagram-button svg { flex: none; }
+.hero { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 1.25rem; padding-block: 1.65rem 2.5rem; }
+.hero .tv-area { width: min(100%, 565px); }
+.intro { text-align: center; width: 100%; }
+.intro h1 { font-size: clamp(2rem, 5vw, 3.65rem); }
+.large .intro h1 { font-size: clamp(2.5rem, 6.25vw, 4.56rem); }
+.intro p { max-width: 52ch; margin: .65rem auto 1.15rem; }
+.intro .actions { justify-content: center; }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">דילוג לתוכן</a>
 <header class="wrap top">
 <a class="brand" href="./" aria-label="EatMates, דף הבית"><img src="../icons/eatmates-logo.png" alt="" width="45" height="45"><b lang="en" dir="ltr">Eat<span>Mates</span></b></a>
-<a class="nav-link" href="#get">פתיחת האפליקציה</a>
 </header>
 <main id="main" class="wrap">
 <section class="hero" aria-labelledby="headline">
-<div class="intro">
-<h1 id="headline">נפגשים.<br> <em>מי מביא מה?</em></h1>
-<p>מארגנים ארוחה או מפגש, שולחים הזמנה לחברים ויודעים מי מגיע ומי מביא מה.</p>
-<div class="actions">
-<a class="button primary" href="https://play.google.com/store/apps/details?id=com.eatmates.app">הורדה לאנדרואיד</a>
-<a class="button secondary" href="../preview/">פתיחה באייפון ובדפדפן</a>
-<a class="button instagram-button" href="https://www.instagram.com/eatmates.events/">
-<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-תעקבו גם באינסטוש</a>
-</div>
-</div>
 <figure class="tv-area" aria-labelledby="video-title">
 <div class="antenna" aria-hidden="true"></div>
 <div class="tv">
@@ -46,6 +41,17 @@
 </div>
 <details><summary>תיאור ההדגמה</summary><p id="demo-copy">פותחים מפגש ובוחרים מה חוגגים ומתי. משתפים קישור עם החברים, מקבלים אישורי הגעה ומחלקים מי מביא מה. קטע ההדגמה מלווה בצלילים קצרים, ללא דיבור.</p></details>
 </figure>
+<div class="intro">
+<h1 id="headline">נפגשים. <em>מי מביא מה?</em></h1>
+<p>מארגנים ארוחה או מפגש, שולחים הזמנה לחברים ויודעים מי מגיע ומי מביא מה.</p>
+<div class="actions">
+<a class="button primary" href="https://play.google.com/store/apps/details?id=com.eatmates.app">הורדה לאנדרואיד</a>
+<a class="button secondary" href="../preview/">פתיחה באייפון ובדפדפן</a>
+<a class="button instagram-button" href="https://www.instagram.com/eatmates.events/">
+<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+תעקבו גם באינסטוש</a>
+</div>
+</div>
 </section>
 <section id="get" class="get" aria-labelledby="get-title">
 <div><h2 id="get-title">מתחילים מהטלפון</h2><p>סרקו קוד עם המצלמה, או לחצו על הקישור מהמכשיר שלכם.</p></div>
