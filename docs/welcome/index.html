@@ -33,10 +33,10 @@
 .intro .instagram-button { width: fit-content; padding: .55em 1em; min-height: 44px; text-align: center; }
 .instagram-button, #platform-tabs button, .stores .platform-link { font: inherit; font-weight: 700; }
 .stores article { display: flex; justify-content: center; background: none; border: 0; padding: 0; }
-.stores .platform-link { display: inline-flex; width: auto; min-height: 44px; padding: .55em 1em; text-align: center; border-radius: 8px; }
+.stores .platform-link { display: inline-flex; width: min(100%, 15rem); min-height: 44px; padding: .55em 1em; text-align: center; border-radius: 8px; }
 .screen { position: relative; }
 .screen video { position: absolute; inset: 0; object-fit: cover; }
-.screen video.end-card { object-view-box: inset(10.75% 0 11.25%); object-fit: fill; }
+.screen video.end-card { object-view-box: inset(10.75% 0 11.25%); object-fit: cover; }
 </style>
 </head>
 <body>
@@ -67,11 +67,11 @@
 <div><h2 id="get-title">מתחילים מהטלפון</h2><p>בחרו את המכשיר שלכם ולחצו על הקישור.</p></div>
 <div id="platform-tabs" role="tablist" aria-label="בחירת מכשיר" hidden>
 <button type="button" role="tab" id="tab-android" aria-controls="panel-android" aria-selected="false">אנדרואיד</button>
-<button type="button" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false">אייפון ודפדפן</button>
+<button type="button" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false">אייפון</button>
 </div>
 <div class="stores">
 <article role="tabpanel" id="panel-android" aria-labelledby="tab-android"><a class="button primary platform-link" href="https://play.google.com/store/apps/details?id=com.eatmates.app">הורדה מ־Google Play</a></article>
-<article role="tabpanel" id="panel-web" aria-labelledby="tab-web"><a class="button primary platform-link" href="https://djmotti.github.io/eatmates-web/preview/#/">פתיחה באייפון ובדפדפן</a></article>
+<article role="tabpanel" id="panel-web" aria-labelledby="tab-web"><a class="button primary platform-link" href="https://djmotti.github.io/eatmates-web/preview/#/">פתיחה באייפון</a></article>
 </div>
 </section>
 </main>
@@ -124,7 +124,7 @@ reduceMotion.addEventListener('change', event => {
 
 film.muted = true;
 function syncEndCard() {
-  film.classList.toggle('end-card', film.currentTime >= 22.75);
+  film.classList.toggle('end-card', film.currentTime >= 21.25);
 }
 film.addEventListener('timeupdate', syncEndCard);
 film.addEventListener('seeked', syncEndCard);
