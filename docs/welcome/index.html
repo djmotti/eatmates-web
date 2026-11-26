@@ -45,6 +45,26 @@
 #access-menu .close { background: #000; border-color: #fff; }
 #access-menu input { accent-color: #fff; }
 #access-menu :focus-visible { outline-color: #fff; }
+
+.contrast {
+  color-scheme: dark;
+  --paper: #000;
+  --card: #000;
+  --ink: #fff;
+  --muted: #fff;
+  --accent: #ffdf5d;
+  --line: #fff;
+  --strong: #ffdf5d;
+}
+.contrast .primary,
+.contrast #platform-tabs [aria-selected="true"] { color: #000; }
+.contrast .instagram-button,
+.contrast .access-button { background: #000; color: #ffdf5d; border-color: #ffdf5d; }
+.contrast .top .brand { background: #fff; }
+.contrast .top .brand img { mix-blend-mode: normal; }
+.contrast :focus-visible { outline-color: #ffdf5d; }
+.contrast #access-menu::backdrop { background: rgb(0 0 0 / 35%); }
+.large .get h2 { font-size: clamp(2rem, 4.75vw, 3.0625rem); }
 </style>
 </head>
 <body>
@@ -113,7 +133,7 @@ function bindPreference(id, apply) {
   input.checked = getPreference(id);
   apply(input.checked);
   input.addEventListener('change', () => {
-    apply(input.checked);
+    apply(input.checked, true);
     try { localStorage.setItem('eatmates-welcome-' + id, String(input.checked)); }
     catch { /* Preferences still apply to this page. */ }
   });
@@ -121,9 +141,12 @@ function bindPreference(id, apply) {
 
 bindPreference('big-text', enabled => document.documentElement.classList.toggle('large', enabled));
 bindPreference('contrast', enabled => document.documentElement.classList.toggle('contrast', enabled));
-bindPreference('still', enabled => {
+bindPreference('still', (enabled, changedByUser) => {
   film.autoplay = !enabled && !reduceMotion.matches;
   if (enabled) film.pause();
+  if (changedByUser && film.autoplay && !film.ended) {
+    film.play().catch(() => {});
+  }
 });
 reduceMotion.addEventListener('change', event => {
   film.autoplay = !event.matches && !document.querySelector('#still').checked;
